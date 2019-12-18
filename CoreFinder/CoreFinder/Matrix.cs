@@ -4,13 +4,14 @@ using System.Collections.Generic;
 namespace CoreFinder
 {
     public struct Initialized { }
+    public struct Case2 { }
     public class Matrix
     {
         MathNet.Numerics.LinearAlgebra.Matrix <Single> M;
         MathNet.Numerics.LinearAlgebra.Matrix <Single> mySourceM;
         List <Single> myVertices;
         Stack <int> myPath;
-        List <List <int>> myLoops;
+        List <List <int>> myRelationClasses;
 
         public MathNet.Numerics.LinearAlgebra.Matrix <Single> Mat { get => mySourceM; }
 
@@ -27,6 +28,18 @@ namespace CoreFinder
             M[7, 0] = 0; M[7, 1] = 0; M[7, 2] = 0; M[7, 3] = 0; M[7, 4] = 0; M[7, 5] = 0; M[7, 6] = 0; M[7, 7] = 0; M[7, 8] = 1; M[7, 9] = 0;
             M[8, 0] = 0; M[8, 1] = 0; M[8, 2] = 0; M[8, 3] = 0; M[8, 4] = 0; M[8, 5] = 0; M[8, 6] = 0; M[8, 7] = 0; M[8, 8] = 0; M[8, 9] = 0;
             M[9, 0] = 0; M[9, 1] = 0; M[9, 2] = 0; M[9, 3] = 0; M[9, 4] = 0; M[9, 5] = 0; M[9, 6] = 0; M[9, 7] = 0; M[9, 8] = 1; M[9, 9] = 0;
+            mySourceM = GetCopy();
+        }
+
+        public Matrix (Case2 theInit)
+        {
+            M = MathNet.Numerics.LinearAlgebra.Matrix<Single>.Build.Dense (6, 6);
+            M[0, 0] = 1; M[0, 1] = 1; M[0, 2] = 1; M[0, 3] = 1; M[0, 4] = 1; M[0, 5] = 1;
+            M[1, 0] = 1; M[1, 1] = 1; M[1, 2] = 1; M[1, 3] = 1; M[1, 4] = 1; M[1, 5] = 1; 
+            M[2, 0] = 0; M[2, 1] = 0; M[2, 2] = 1; M[2, 3] = 1; M[2, 4] = 1; M[2, 5] = 1;
+            M[3, 0] = 0; M[3, 1] = 0; M[3, 2] = 1; M[3, 3] = 1; M[3, 4] = 1; M[3, 5] = 1;
+            M[4, 0] = 0; M[4, 1] = 0; M[4, 2] = 0; M[4, 3] = 0; M[4, 4] = 1; M[4, 5] = 1;
+            M[5, 0] = 0; M[5, 1] = 0; M[5, 2] = 0; M[5, 3] = 0; M[5, 4] = 1; M[5, 5] = 1;
             mySourceM = GetCopy();
         }
         public Matrix() { }
@@ -170,7 +183,7 @@ namespace CoreFinder
         {
             //Read(); // uncomment to enter matrix manualy
             MakeReflexive();
-
+            Print (M);
             M = IsTransite();
 
             myVertices = new List <Single>();
@@ -178,7 +191,7 @@ namespace CoreFinder
                 myVertices.Add (i);
             }
             myPath = new Stack <int>();
-            myLoops = new List <List <int>>();
+            myRelationClasses = new List <List <int>>();
             var aVisitedVetices = new List <int>();
 
 
@@ -188,39 +201,37 @@ namespace CoreFinder
 
                     bool aRes = VisitVertex (i);
                     if (aRes) {
-                        myLoops.Add (new List <int >(myPath.ToArray()));
+                        myRelationClasses.Add (new List <int >(myPath.ToArray()));
                         aVisitedVetices.AddRange (myPath.ToArray());
                         myPath.Clear();
                     } else {
                         aVisitedVetices.Add (i);
-                        myLoops.Add (new List<int> { i });
+                        myRelationClasses.Add (new List<int> { i });
                     }
                 }
             }
 
             MathNet.Numerics.LinearAlgebra.Matrix <Single> aRelationMatrix = 
-                MathNet.Numerics.LinearAlgebra.Matrix <Single>.Build.Dense (myLoops.Count, myLoops.Count);
+                MathNet.Numerics.LinearAlgebra.Matrix <Single>.Build.Dense (myRelationClasses.Count, myRelationClasses.Count);
 
-            FillRelationMatrix (myLoops, aRelationMatrix);
+            FillRelationMatrix (myRelationClasses, aRelationMatrix);
+            Print (aRelationMatrix);
             var aSets = GetHelperSets  (aRelationMatrix);
 
             
-            var aKernels = TryFindKernels (aSets).Null;
+            var aKernels = TryFindKernels (aSets);
 
-            foreach (var aKernel in aKernels) {
-
-                Console.Write ($"Kernel #{aKernel.Index}\n");
-                foreach (var aRowIndex in myLoops[aKernel.Index]) {
+            Console.Write ($"Kernel \n");
+            foreach (var aKernel in aKernels.Null) {
+                foreach (var aRowIndex in myRelationClasses[aKernel.Index]) {
                     
-                    Console.Write ("\t");
+                    Console.Write ("  ");
                     foreach (var aVal in Mat.Row (aRowIndex)) { 
                         Console.Write ($"{aVal} ");
                     }
 
                     Console.Write (Environment.NewLine);
                 }
-
-                Console.Write (Environment.NewLine);
             }
             
         }
@@ -277,6 +288,8 @@ namespace CoreFinder
                                 aResSet.Empty.Add (aVec);
 
                                 DeleteVectorElementByIndex (aResSet.Ones, aVec.Index);
+                                j = aColumn.Count;
+                                break;
                             }
                         }
 
@@ -292,6 +305,8 @@ namespace CoreFinder
                                 aResSet.Null.Add (aVec);
 
                                 DeleteVectorElementByIndex (aResSet.Ones, aVec.Index);
+                                j = aColumn.Count;
+                                break;
                             }
                         }
                     }

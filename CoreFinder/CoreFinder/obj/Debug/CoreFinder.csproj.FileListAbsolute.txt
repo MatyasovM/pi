@@ -32,3 +32,17 @@ C:\Users\Mikhail\Desktop\CoreFinder\CoreFinder\obj\Debug\CoreFinder.csprojAssemb
 C:\Users\Mikhail\Desktop\CoreFinder\CoreFinder\obj\Debug\CoreFinder.csproj.CopyComplete
 C:\Users\Mikhail\Desktop\CoreFinder\CoreFinder\obj\Debug\CoreFinder.exe
 C:\Users\Mikhail\Desktop\CoreFinder\CoreFinder\obj\Debug\CoreFinder.pdb
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\CoreFinder.exe.config
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\CoreFinder.exe
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\CoreFinder.pdb
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\MathNet.Numerics.dll
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\ratchet-math-matrix-net45.dll
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\MathNet.Numerics.xml
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\ratchet-math-matrix-net45.pdb
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\obj\Debug\CoreFinder.csprojAssemblyReference.cache
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\obj\Debug\CoreFinder.csproj.CoreCompileInputs.cache
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\obj\Debug\CoreFinder.csproj.CopyComplete
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\obj\Debug\CoreFinder.exe
+C:\Users\mmatyasov\Desktop\pi\CoreFinder\CoreFinder\obj\Debug\CoreFinder.pdb

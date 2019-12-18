@@ -7,7 +7,7 @@ namespace CoreFinder
     {
         static void Main(string[] args)
         {
-            Matrix aMatrix = new Matrix (new Initialized());
+            Matrix aMatrix = new Matrix (new Case2());
             Console.WriteLine ("Source matrix... \n");
             aMatrix.Print (aMatrix.Mat);
 
