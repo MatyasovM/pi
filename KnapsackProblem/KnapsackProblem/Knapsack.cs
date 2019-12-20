@@ -8,11 +8,13 @@ namespace KnapsackProblem
         public int ID { get; set; }
         public int Price { get; set; }
         public int Weight { get; set; }
+        public int Check { get; set; }
     }
     
     public class Knapsack
     {
         List <KnapsackObject> myKnapsack = new List<KnapsackObject>();
+        public int WeightLimit { get; set; }
 
         public List <KnapsackObject> Knapsck { get => myKnapsack; set => myKnapsack = value; }
 
@@ -49,6 +51,39 @@ namespace KnapsackProblem
                 aCurrentValue += theCurrentLine[theCurPos];
             }
             return System.Convert.ToInt32 (aCurrentValue);
+        }
+
+        List <int> Put()
+        {
+            List <int> S = new List<int>();
+            int Q = 0;
+            int SumW = 0;
+            int Ci = GetMax_C();
+
+            foreach (var anObj in myKnapsack) {
+                if ((SumW + anObj.Weight) <= WeightLimit) {
+                    Q = Q + Ci;
+                    SumW = SumW + anObj.Weight;
+                    S.Add (1);
+                } else {
+                    break;
+                }
+            }
+
+            foreach ()
+            return aRes;
+        }
+
+        private int GetMax_C()
+        {
+            int aMax = -1;
+            foreach (var anObj in myKnapsack) {
+                if (anObj.Price > aMax) {
+                    aMax = anObj.Price;
+                }
+            }
+
+            return aMax;
         }
     }
 }
