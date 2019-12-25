@@ -53,37 +53,51 @@ namespace KnapsackProblem
             return System.Convert.ToInt32 (aCurrentValue);
         }
 
-        List <int> Put()
+        public List <int> ResolveProblem()
         {
-            List <int> S = new List<int>();
+            List <int> S = new List <int>();
+            for (int i = 0; i < myKnapsack.Count; i++) {
+                S.Add (0);
+            }
             int Q = 0;
             int SumW = 0;
-            int Ci = GetMax_C();
 
-            foreach (var anObj in myKnapsack) {
-                if ((SumW + anObj.Weight) <= WeightLimit) {
-                    Q = Q + Ci;
-                    SumW = SumW + anObj.Weight;
-                    S.Add (1);
+            KnapsackObject[] aCopy = new KnapsackObject [myKnapsack.Count];
+            myKnapsack.CopyTo (aCopy);
+            List <KnapsackObject> aCopyList = new List <KnapsackObject>();
+            aCopyList.AddRange (aCopy);
+
+            for (int i = 0; i < myKnapsack.Count; i++) {
+
+                var aCurrentMaxCi = GetMax_C (aCopyList);
+                if ((SumW + aCurrentMaxCi.Weight) <= WeightLimit) {
+
+                    int aCurrentIndex = myKnapsack.IndexOf (aCurrentMaxCi);
+                    aCopyList.Remove (aCurrentMaxCi);
+
+                    Q = Q + aCurrentMaxCi.Price;
+                    SumW = SumW + aCurrentMaxCi.Weight;
+                    S[aCurrentIndex] =  1;
                 } else {
                     break;
                 }
             }
 
-            foreach ()
-            return aRes;
+            return S;
         }
 
-        private int GetMax_C()
+        private KnapsackObject GetMax_C (List <KnapsackObject> theKnap)
         {
             int aMax = -1;
-            foreach (var anObj in myKnapsack) {
+            KnapsackObject aRes = new KnapsackObject();
+            foreach (var anObj in theKnap) {
                 if (anObj.Price > aMax) {
                     aMax = anObj.Price;
+                    aRes = anObj;
                 }
             }
 
-            return aMax;
+            return aRes;
         }
     }
 }
