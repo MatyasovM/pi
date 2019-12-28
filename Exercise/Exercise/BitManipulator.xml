@@ -1,0 +1,1907 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BitManipulator</name>
+    </assembly>
+    <members>
+        <member name="T:BitManipulator.EndiannessExtensions">
+            <summary>
+                Extension methods for packing/unpacking integral numbers into/out of byte arrays, in big-or-little endian formats.
+            </summary>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int16)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int16,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int16,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16(System.Byte[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt16_NoChecks(System.Byte[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int32,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int32,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32(System.Byte[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt32_NoChecks(System.Byte[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int64)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int64,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int64,System.Byte[])">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an signed integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.Int64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.Int64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an signed integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64(System.Byte[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToInt64_NoChecks(System.Byte[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt16)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt16,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt16,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16(System.Byte[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt16_NoChecks(System.Byte[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt32,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt32,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32(System.Byte[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt32_NoChecks(System.Byte[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt64)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt64,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt64,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian(System.UInt64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToBigEndian_NoChecks(System.UInt64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in big-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64(System.Byte[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.BigEndianToUInt64_NoChecks(System.Byte[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in big-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int16)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int16,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int16,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int16,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int16,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16(System.Byte[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt16_NoChecks(System.Byte[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int32,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int32,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int32,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32(System.Byte[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt32_NoChecks(System.Byte[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int64)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int64,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int64,System.Byte[])">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int64,System.Byte[],System.Int32)">
+            <summary>
+                Packs a signed integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.Int64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.Int64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs signed integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit signed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks a signed integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64(System.Byte[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToInt64_NoChecks(System.Byte[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks signed integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt16)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt16,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt16,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt16,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt16[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16(System.Byte[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt16_NoChecks(System.Byte[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt32,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt32,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt32,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32(System.Byte[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt32_NoChecks(System.Byte[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt64)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into a byte array
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <returns>Byte array containing packed integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt64,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt64,System.Byte[])">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt64,System.Byte[],System.Int32)">
+            <summary>
+                Packs an unsigned integer <paramref name="n" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="n">Integer to pack.</param>
+            <param name="ba">Byte array to pack integer into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian(System.UInt64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ToLittleEndian_NoChecks(System.UInt64[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Packs unsigned integers <paramref name="ia" /> into <paramref name="ba" />
+                in little-endian format.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to pack integers into.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to write to.</param>
+            <param name="ia">Integer array to pack into <paramref name="ba" />.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to read from.</param>
+            <param name="count">Number of integers to output into <paramref name="ba" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64_NoChecks(System.Byte[])">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64_NoChecks(System.Byte[],System.Int32)">
+            <summary>
+                Unpacks an unsigned integer in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <returns>64-bit unsigned integer.</returns>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64(System.Byte[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.LittleEndianToUInt64_NoChecks(System.Byte[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Unpacks unsigned integers in little-endian format from <paramref name="ba" />.
+                Does not perform any argument validation.
+            </summary>
+            <param name="ba">Byte array to unpack integer from.</param>
+            <param name="baOff">Offset in <paramref name="ba" /> to read from.</param>
+            <param name="ia">Array to place unpacked integers in.</param>
+            <param name="iaOff">Offset in <paramref name="ia" /> to write to.</param>
+            <param name="count">Number of integers to output into <paramref name="ia" />.</param>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ValidateArgumentsBytesToIntegersImpl``1(System.Byte[],System.Int32,System.Nullable{System.Int32})">
+            <summary>
+                Validate arguments/parameters to prevent unexpected exceptions.
+                Throws well-defined exceptions for different types of invalid arguments(s).
+            </summary>
+            <param name="src">Byte array that output will be produced from.</param>
+            <param name="srcOff">Offset in <paramref name="src"/> to read data from.</param>
+            <param name="outputSizeRatio">
+                How many bytes are required to produce one unit of the output type <typeparamref name="T"/>
+                (<paramref name="src"/> : <typeparamref name="T"/>). Default is null - size will be determined algorithmically.
+                It is recommended to supply the size ratio for better performance, instead of relying on this.
+            </param>
+            <typeparam name="T">Type of item that data from <paramref name="src"/> will be transformed to.</typeparam>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="src"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                Length of <paramref name="src"/> less than 0,
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <list type="bullet">
+                    <item>
+                        <description>
+                            <paramref name="srcOff"/> less than 0.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="srcOff"/> more than length of <paramref name="src"/> - sizeof(
+                            <typeparamref name="T"/>).
+                        </description>
+                    </item>
+                </list>
+            </exception>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ValidateArgumentsBytesToIntegersImpl``1(System.Byte[],System.Int32,``0[],System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+                Validate arguments/parameters to prevent unexpected exceptions.
+                Throws well-defined exceptions for different types of invalid arguments(s).
+            </summary>
+            <param name="src">Byte array that output will be produced from.</param>
+            <param name="srcOff">Offset in <paramref name="src"/> to read data from.</param>
+            <param name="dst">Destination array of type <typeparamref name="T"/> for output.</param>
+            <param name="dstOff">Offset in <paramref name="dst"/> to write data to.</param>
+            <param name="count">Number of items (of the size of <typeparamref name="T"/>) to process.</param>
+            <param name="outputSizeRatio">
+                How many input units (bytes) are required to write one unit of the output type
+                <typeparamref name="T"/> (<paramref name="src"/> : <paramref name="dst"/>). Default is null - size will be
+                determined algorithmically. It is recommended to supply the size ratio for better performance,
+                instead of relying on this.
+            </param>
+            <typeparam name="T">
+                Destination/target type of data in <paramref name="dst"/> that data
+                from <paramref name="src"/> will be transformed to and written to.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="src"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                Length of <paramref name="src"/> less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <list type="bullet">
+                    <item>
+                        <description>
+                            <paramref name="srcOff"/> less than 0.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="srcOff"/> more than length of <paramref name="src"/> - (sizeof(
+                            <typeparamref name="T"/>) * <paramref name="count"/>).
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="count"/> less than 1.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="count"/> less than length of <paramref name="src"/>.
+                        </description>
+                    </item>
+                </list>
+            </exception>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ValidateArgumentsIntegersToBytesImpl``1(``0[],System.Int32,System.Byte[],System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+                Validate arguments/parameters to prevent unexpected exceptions.
+                Throws well-defined exceptions for different types of invalid arguments(s).
+            </summary>
+            <param name="src">Source <typeparamref name="T"/> array to read input from.</param>
+            <param name="srcOff">Offset in <paramref name="src"/> to read data from.</param>
+            <param name="dst">Destination byte array to write output to.</param>
+            <param name="dstOff">Offset in <paramref name="dst"/> to write data to.</param>
+            <param name="count">Number of items (of the size of <typeparamref name="T"/>) to process.</param>
+            <param name="outputSizeRatio">
+                How many output units (bytes) are required to write one transformed unit of the output type
+                <typeparamref name="T"/> (<paramref name="dst"/> : <paramref name="src"/>). Default is null - size will be
+                determined algorithmically. It is recommended to supply the size ratio for better performance,
+                instead of relying on this.
+            </param>
+            <typeparam name="T">
+                Source type of data in <paramref name="src"/> that data
+                from will be transformed from and written to <paramref name="dst"/>.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">
+                <paramref name="src"/> or <paramref name="dst"/> are null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+                Length of <paramref name="dst"/> less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                <list type="bullet">
+                    <item>
+                        <description>
+                            <paramref name="dstOff"/> less than 0.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="dstOff"/> more than length of <paramref name="dst"/> - (sizeof(
+                            <typeparamref name="T"/>) * <paramref name="count"/>).
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="count"/> less than 1.
+                        </description>
+                    </item>
+                    <item>
+                        <description>
+                            <paramref name="count"/> less than length of <paramref name="dst"/>.
+                        </description>
+                    </item>
+                </list>
+            </exception>
+        </member>
+        <member name="M:BitManipulator.EndiannessExtensions.ThrowOnInvalidArgument``1(``0[],``0[],System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Used to verify arguments for a method of the form "copy <paramref name="length" /> items,
+                possibly with modification, from <paramref name="src" />[<paramref name="srcOff" />] to
+                <paramref name="dst" />[<paramref name="dstOff" />].".
+            </summary>
+            <typeparam name="T">Type of the source and destination arrays.</typeparam>
+            <param name="src">Source data array.</param>
+            <param name="dst">Destination array for data.</param>
+            <param name="length">Number of items to copy from <paramref name="src" /> into <paramref name="dst" />.</param>
+            <param name="srcOff">Offset in <paramref name="src" /> to read from.</param>
+            <param name="dstOff">Offset in <paramref name="dst" /> to write to.</param>
+            <param name="srcName">
+                Name of the argument for <paramref name="src" />.
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="dstName">
+                Name of the argument for <paramref name="dst" />.
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="lengthName">
+                Name of the argument for <paramref name="length" />.
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="srcOffName">
+                Name of the argument for <paramref name="srcOff" />.
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="dstOffName">
+                Name of the argument for <paramref name="dstOff" />.
+                Set to null (default) if existing name matches.
+            </param>
+        </member>
+        <member name="T:BitManipulator.RotationExtensions">
+            <summary>
+                Extension methods for circularly-rotating integral numbers ("rotate through carry" derivative not provided).
+            </summary>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.Byte,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.Byte,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.Int16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.Int16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.UInt16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.UInt16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.Int32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.Int32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.UInt32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.UInt32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.Int64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.Int64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft(System.UInt64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateLeft_NoChecks(System.UInt64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> left by <paramref name="distance" /> bits
+                (<paramref name="i" /> &lt;&lt;&lt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.Byte,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.Byte,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.Int16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.Int16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.UInt16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.UInt16,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.Int32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.Int32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.UInt32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.UInt32,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.Int64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.Int64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight(System.UInt64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.RotateRight_NoChecks(System.UInt64,System.Int32)">
+            <summary>
+                Rotate an integer <paramref name="i" /> right by <paramref name="distance" /> bits
+                (<paramref name="i" /> &gt;&gt;&gt; <paramref name="distance" />).
+            </summary>
+            <param name="i">Integer to rotate.</param>
+            <param name="distance">Distance to rotate.</param>
+            <returns>Rotated integer.</returns>
+        </member>
+        <member name="M:BitManipulator.RotationExtensions.ThrowOnInvalidArgument(System.Int32,System.Int32)">
+            <summary>
+                Validate arguments/parameters to prevent unexpected exceptions.
+            </summary>
+            <param name="distance">Distance in bits to rotate (positive integer).</param>
+            <param name="typeSizeBits">Size in bits of value type to be rotated (e.g. ulong = 64 bits).</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                Shift <paramref name="distance"/> is negative (less than 0), or exceeds
+                <paramref name="typeSizeBits"/> (bit-size of relevant value type - e.g. UInt64 = 64).
+            </exception>
+        </member>
+        <member name="M:BitManipulator.Shared.SizeOf``1">
+            <summary>
+                Determine the size in memory used to store a struct
+                of type <typeparamref name="T" /> at runtime.
+                Automatically determines if <typeparamref name="T" /> is
+                an array, and if so, checks the array element type.
+            </summary>
+            <remarks>
+                The sizeof operator cannot be used to get size information at run time, and so
+                this quite inelegant method is an unfortunate but necessary workaround.
+            </remarks>
+            <typeparam name="T">Type of the struct.</typeparam>
+            <returns>Size of a <typeparamref name="T" /> instance in bytes.</returns>
+        </member>
+    </members>
+</doc>

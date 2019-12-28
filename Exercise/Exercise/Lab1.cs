@@ -2,24 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Threading.Tasks;
 
 namespace Exercise1
 {
-    class Program
+    class Lab1
     {
-        static void Main(string[] args)
+        public static void Do()
         {
             int L = 15;
-            List <BitVector32> aSearchSpace = new List <BitVector32>();
-
-            //#2
-            Console.WriteLine ("Computing of search space...");
             var aMaxValue = Math.Pow (2, L) - 1;
-            for (int i = 0; i < aMaxValue; i++) {
-                aSearchSpace.Add (new BitVector32 (i));
-            }
-
+            var aSearchSpace = General.GenerateSearceSpace (aMaxValue);
             //#3
             //variant 2
             Console.WriteLine ("Computing of landscape...");
@@ -33,13 +25,9 @@ namespace Exercise1
             Algorithm (aLandscape);
         }
 
-
         static void Algorithm (Hashtable theLandscape)
         {
-            object[] aReverseArray = new object[theLandscape.Count];
-            theLandscape.CopyTo (aReverseArray, 0);
-            List <object> aReverseList = new List<object> (aReverseArray);
-            aReverseList.Reverse();
+            var aReverseList = General.GetReversedHashtableKeys (theLandscape);
             
             int max = 0;
             BitVector32 maxS = new BitVector32 (0);

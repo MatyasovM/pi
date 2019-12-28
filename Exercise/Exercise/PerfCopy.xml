@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PerfCopy</name>
+    </assembly>
+    <members>
+        <member name="T:PerfCopy.CopyExtensions">
+            <summary>
+                Extension methods for copying data.
+            </summary>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyBytes(System.Byte[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyBytes(System.Byte[],System.Byte[])">
+            <summary>
+                Copy bytes from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyBytes(System.Byte[],System.Byte[],System.Int32)">
+            <summary>
+                Copy <paramref name="length" /> bytes from <paramref name="src" />
+                array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="length">Amount of bytes to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyBytes(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Copy <paramref name="length" /> bytes from <paramref name="src" />
+                array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="length">Amount of bytes to copy.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyBytes_NoChecks(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Copy <paramref name="length" /> bytes from <paramref name="src" />
+                array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="length">Amount of bytes to copy.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Byte[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Byte[],System.Byte[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Copy <paramref name="length" /> values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+                Copy <paramref name="length" /> values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Char[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Char[],System.Char[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Char[],System.Int32,System.Char[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.Char[],System.Int32,System.Char[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int16[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int16[],System.Int16[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int16[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.Int16[],System.Int32,System.Int16[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt16[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt16[],System.UInt16[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt16[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.UInt16[],System.Int32,System.UInt16[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int32[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int32[],System.Int32[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int32[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.Int32[],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt32[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt32[],System.UInt32[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt32[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.UInt32[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int64[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int64[],System.Int64[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.Int64[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.Int64[],System.Int32,System.Int64[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt64[])">
+            <summary>
+                Produce a deep copy (copied value by value) of <paramref name="data" /> array.
+            </summary>
+            <param name="data">Array to produce a copy of.</param>
+            <returns>Copy of <paramref name="data" /> array.</returns>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt64[],System.UInt64[])">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy(System.UInt64[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.DeepCopy_NoChecks(System.UInt64[],System.Int32,System.UInt64[],System.Int32,System.Int32)">
+            <summary>
+                Copy values from <paramref name="src" /> array into <paramref name="dst" /> array.
+                Argument/parameter validation is not performed - caution!
+            </summary>
+            <param name="src">Array to copy from.</param>
+            <param name="srcOff">The offset in <paramref name="src" /> to copy from.</param>
+            <param name="dst">Array to copy into.</param>
+            <param name="dstOff">The offset in <paramref name="dst" /> to copy into.</param>
+            <param name="length">Quantity of values to copy.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.CopyMemory(System.Byte*,System.Byte*,System.Int32)">
+            <summary>
+                Copy data from <paramref name="srcPtr" /> into <paramref name="dstPtr" />.
+            </summary>
+            <remarks>
+                If <paramref name="srcPtr" /> or <paramref name="dstPtr" /> are not originally for byte-oriented data,
+                length will need to be adjusted accordingly, e.g. UInt3232 pointer vs. byte pointer = 4x length.
+                Method auto-optimises for word size (32/64-bit) on the machine ISA.
+            </remarks>
+            <param name="srcPtr">Pointer to source of data.</param>
+            <param name="dstPtr">Pointer to destination for data.</param>
+            <param name="length">Length/quantity of data to copy, in bytes.</param>
+        </member>
+        <member name="M:PerfCopy.CopyExtensions.ThrowOnInvalidArgument``1(``0[],``0[],System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+                Used to verify arguments for a method of the form "copy <paramref name="length" /> items, 
+                possibly with modification, from <paramref name="src" />[<paramref name="srcOff" />] to 
+                <paramref name="dst" />[<paramref name="dstOff" />].".
+            </summary>
+            <typeparam name="T">Type of the source and destination arrays.</typeparam>
+            <param name="src">Source data array.</param>
+            <param name="dst">Destination array for data.</param>
+            <param name="length">Number of items to copy from <paramref name="src"/> into <paramref name="dst"/>.</param>
+            <param name="srcOff">Offset in <paramref name="src"/> to read from.</param>
+            <param name="dstOff">Offset in <paramref name="dst"/> to write to.</param>
+            <param name="srcName">
+                Name of the argument for <paramref name="src"/>. 
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="dstName">
+                Name of the argument for <paramref name="dst"/>. 
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="lengthName">
+                Name of the argument for <paramref name="length"/>. 
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="srcOffName">
+                Name of the argument for <paramref name="srcOff"/>. 
+                Set to null (default) if existing name matches.
+            </param>
+            <param name="dstOffName">
+                Name of the argument for <paramref name="dstOff"/>. 
+                Set to null (default) if existing name matches.
+            </param>
+        </member>
+    </members>
+</doc>
